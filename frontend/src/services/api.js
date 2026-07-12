@@ -7,9 +7,9 @@ const API = axios.create({
   },
 });
 
-// ==============================
+// ==========================
 // Upload Dataset
-// ==============================
+// ==========================
 
 export const uploadDataset = async (file) => {
   const formData = new FormData();
@@ -24,38 +24,30 @@ export const uploadDataset = async (file) => {
   return response.data;
 };
 
-// ==============================
+// ==========================
 // Recommendation
-// ==============================
+// ==========================
 
 export const getRecommendation = async (datasetId) => {
-  const response = await API.get(
-    `/get-recommendation/${datasetId}`
-  );
-
+  const response = await API.get(`/recommendation/${datasetId}`);
   return response.data;
 };
 
-// ==============================
-// Hyperparameter Tuning
-// ==============================
+// ==========================
+// Run Hyperparameter Tuning
+// ==========================
 
 export const runTuning = async (datasetId) => {
-  const response = await API.post(
-    `/run-tuning/${datasetId}`
-  );
-
+  const response = await API.post(`/run-tuning/${datasetId}`);
   return response.data;
 };
 
-// ==============================
-// History
-// ==============================
-console.log("API FILE LOADED");
+// ==========================
+// Training History
+// ==========================
 
 export const getHistory = async () => {
   const response = await API.get("/get-history/");
-
   return response.data;
 };
 
