@@ -16,7 +16,9 @@ backend/uploads/
 
 # Processed Data
 processed/
-data/temp/
+
+!data/processed/
+!data/processed/openml_meta_features.csv
 
 # Node
 frontend/node_modules/
