@@ -29,7 +29,7 @@ export const uploadDataset = async (file) => {
 // ==========================
 
 export const getRecommendation = async (datasetId) => {
-  const response = await API.get(`/recommendation/${datasetId}`);
+  const response = await API.get(`/get-recommendation/${datasetId}`);
   return response.data;
 };
 
